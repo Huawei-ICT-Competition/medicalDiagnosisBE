@@ -11,7 +11,7 @@ class CustomModel:
         self.infer = tf.saved_model.load(path).signatures['serving_default']
 
     def predict(self, img: np.ndarray):
-        return int(self.infer(tf.constant(img, dtype=float))['dense_1'].numpy().argmax(axis=1)[0])
+        return int(self.infer(tf.constant(img, dtype=float))['dense_5'].numpy().argmax(axis=1)[0])
 
     def preprocess_img(self, img: cv2.Mat):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

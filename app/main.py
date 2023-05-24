@@ -6,7 +6,7 @@ import uvicorn
 # app = FastAPI(root_path='/prod')
 app = FastAPI()
 
-origins = ["http://localhost", "http://159.138.45.180"]
+origins = ["http://localhost", "http://159.138.45.180", "*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
